@@ -1,0 +1,32 @@
+{
+  "name": "video-server",
+  "version": "1.0.0",
+  "description": "Allows file browsing from the web browser to cast videos from a media directory to a TV",
+  "main": "server.js",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeti-detective/yeti_video_server.git"
+  },
+  "keywords": [
+    "video",
+    "server",
+    "yeti",
+    "detective",
+    "cast",
+    "chromecast"
+  ],
+  "author": "Christopher Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeti-detective/yeti_video_server/issues"
+  },
+  "homepage": "https://github.com/yeti-detective/yeti_video_server#readme"
+}
