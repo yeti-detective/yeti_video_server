@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bromer Movie Player</title>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.movie').click(function(){
+            var src = '../' + this.id.toString();
+            $('#play_this').attr('src', src);
+        })
+    })
+</script>
+<style>
+    body {
+        background-color: #00BAE8;
+    }
+
+    #player {
+        width: 100%;
+        text-align: center;
+    }
+
+    #vid {
+        margin: auto;
+        min-width: 640px;
+        min-height: 480px;
+    }
+
+    ul {
+        text-align: left;
+    }
+
+</style>
+</head>
+<body>
+    <div id="player">
+        <video id="vid" controls>
+            <source id="play_this" type="video/mp4" src="../Movies/Ash.vs.Evil.Dead.S02E04.WEBRip.X264-DEFLATE[ettv].mkv">
+        </video>
+        <ul class="movies">
+        <% for(i = 0; i < movies.length; i++) {%>
+            <li><button class="movie" id="<%= movies[i] %>"> <%= movies[i].substr('/') %></button> </li>
+        <% } %>
+        </ul>
+    </div>
+</body>
+</html>
