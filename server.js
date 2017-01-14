@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 var glob = require('glob');
+var os = require('os');
 
 var movies = [];
 var exts = ['mkv', 'mp4', 'ogg'];
@@ -20,11 +21,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/Movies/:movie', (req, res) => {
-    res.set('Content-Type', 'video/mp4');
+    if (movies[req.params.movie].substring(-3) == 'mkv'){
+        res.set('Content-Type', 'video/mkv');
+    }else{
+        res.set('Content-Type', 'video/mp4');
+    }
     var mov = fs.createReadStream(movies[req.params.movie]);
     mov.pipe(res);
 })
 
-app.listen(8080, () => {
-    console.log('listening on 8080');
+app.listen(8080 , () => {
+    console.log('visit on 8080');
 })

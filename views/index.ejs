@@ -14,8 +14,15 @@
     }
 
     .movies {
-        background-color: #FF8925;
+        background-color: #770CE8;
         padding-top: 5px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    a {
+        color: #FFFFFF;
+        font-family: monospace;
     }
 
     #player {
@@ -45,7 +52,7 @@
         -->
         <ul class="movies">
         <% for(i = 0; i < movies.length; i++) {%>
-            <li> <div class="movie"><a href=<%="/Movies/" + i.toString()%> <p> <%= movies[i].substr('/') %></p></div> </li>
+            <li> <div class="movie"><a href=<%="/Movies/" + i.toString()%> <p> <%= movies[i].substring(movies[i].lastIndexOf('/')+1) %></p></div> </li>
         <% } %>
         </ul>
     </div>
