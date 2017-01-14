@@ -5,15 +5,17 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        $('.movie').click(function(){
-            var src = '../' + this.id.toString();
-            $('#play_this').attr('src', src);
-        })
+        
     })
 </script>
 <style>
     body {
         background-color: #00BAE8;
+    }
+
+    .movies {
+        background-color: #FF8925;
+        padding-top: 5px;
     }
 
     #player {
@@ -29,18 +31,21 @@
 
     ul {
         text-align: left;
+        list-style-type: none;
     }
 
 </style>
 </head>
 <body>
     <div id="player">
+        <!--
         <video id="vid" controls>
-            <source id="play_this" type="video/mp4" src="../Movies/Ash.vs.Evil.Dead.S02E04.WEBRip.X264-DEFLATE[ettv].mkv">
+            <source id="play_this" type="video/mp4">
         </video>
+        -->
         <ul class="movies">
         <% for(i = 0; i < movies.length; i++) {%>
-            <li><button class="movie" id="<%= movies[i] %>"> <%= movies[i].substr('/') %></button> </li>
+            <li> <div class="movie"><a href=<%="/Movies/" + i.toString()%> <p> <%= movies[i].substr('/') %></p></div> </li>
         <% } %>
         </ul>
     </div>
